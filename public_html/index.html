@@ -4,8 +4,17 @@
         <title>JSTetris</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>
     <body>
+        <div id="gameboard">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div id="score">
+            <p>Lines: <span id="lines"></span></p>
+        </div>
         
+        <script type="text/javascript" src="js/pieces.js"></script>
+        <script type="text/javascript" src="js/BulkImageLoader.js"></script>
     </body>
 </html>
