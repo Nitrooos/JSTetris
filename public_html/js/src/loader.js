@@ -1,4 +1,4 @@
-var teris = {
+var tetris = {
     screens: {},
     settings: {
         rows: 15,
@@ -16,8 +16,8 @@ window.addEventListener("load", function() {
             // Następujące skrypty są ładowane domyślnie
             load: [
                 "js/lib/sizzle.js",
-                "js/src/bulkImageLoader.js",
-                "js/src/pieces.js"
+                "js/src/pieces.js",
+                "js/src/board.js"
             ],
             // Funkcja wywoływana po załadowaniu wszystkich plików
             complete: function() {

@@ -8,7 +8,7 @@ function LPiece() {
     this.gridY = -3;
 }
 
-LPiece.prototype = Object.create(Piece.prototype);
+LPiece.prototype = new Piece();
 LPiece.prototype.constructor = LPiece;
 LPiece.prototype.states = [ [ [1, 0],
                               [1, 0],
@@ -31,7 +31,7 @@ function ReverseLPiece() {
     this.gridY = -3;
 }
 
-ReverseLPiece.prototype = Object.create(Piece.prototype);
+ReverseLPiece.prototype = new Piece();
 ReverseLPiece.prototype.constructor = ReverseLPiece;
 ReverseLPiece.prototype.states = [ [ [0, 1],
                                      [0, 1],
@@ -54,7 +54,7 @@ function BlockPiece() {
     this.gridY = -2;
 }
 
-BlockPiece.prototype = Object.create(Piece.prototype);
+BlockPiece.prototype = new Piece();
 BlockPiece.prototype.constructor = BlockPiece;
 BlockPiece.prototype.states = [ [1, 1],
                                 [1, 1]
@@ -65,7 +65,7 @@ function LinePiece() {
     this.gridY = -4;
 }
 
-LinePiece.prototype = Object.create(Piece.prototype);
+LinePiece.prototype = new Piece();
 LinePiece.prototype.constructor = LinePiece;
 LinePiece.prototype.states = [ [ [1],
                                  [1],
@@ -81,7 +81,7 @@ function TPiece() {
     this.gridY = -2;
 }
 
-TPiece.prototype = Object.create(Piece.prototype);
+TPiece.prototype = new Piece();
 TPiece.prototype.constructor = TPiece;
 TPiece.prototype.states = [ [ [1, 1, 1],
                               [0, 1, 0]
@@ -104,7 +104,7 @@ function ZPiece() {
     this.gridY = -2;
 }
 
-ZPiece.prototype = Object.create(Piece.prototype);
+ZPiece.prototype = new Piece();
 ZPiece.prototype.constructor = ZPiece;
 ZPiece.prototype.states = [ [ [1, 1, 0],
                               [0, 1, 1]
@@ -120,7 +120,7 @@ function ReverseZPiece() {
     this.gridY = -2;
 }
 
-ReverseZPiece.prototype = Object.create(Piece.prototype);
+ReverseZPiece.prototype = new Piece();
 ReverseZPiece.prototype.constructor = ReverseZPiece;
 ReverseZPiece.prototype.states = [ [ [0, 1, 1],
                                      [1, 1, 0]
