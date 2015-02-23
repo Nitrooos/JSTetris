@@ -3,9 +3,14 @@ function Piece() {
     this.color = 0;
 }
 
+Piece.prototype = {
+    width: 32,
+    height: 32
+};
+
 function LPiece() {
     this.gridX = 4;
-    this.gridY = -3;
+    this.gridY = -2;
 }
 
 LPiece.prototype = new Piece();
@@ -28,7 +33,7 @@ LPiece.prototype.states = [ [ [1, 0],
 
 function ReverseLPiece() {
     this.gridX = 4;
-    this.gridY = -3;
+    this.gridY = -2;
 }
 
 ReverseLPiece.prototype = new Piece();
@@ -51,18 +56,19 @@ ReverseLPiece.prototype.states = [ [ [0, 1],
 
 function BlockPiece() {
     this.gridX = 4;
-    this.gridY = -2;
+    this.gridY = -1;
 }
 
 BlockPiece.prototype = new Piece();
 BlockPiece.prototype.constructor = BlockPiece;
-BlockPiece.prototype.states = [ [1, 1],
-                                [1, 1]
+BlockPiece.prototype.states = [ [ [1, 1],
+                                  [1, 1]
+                                ]
 ];
 
 function LinePiece() {
     this.gridX = 5;
-    this.gridY = -4;
+    this.gridY = -3;
 }
 
 LinePiece.prototype = new Piece();
@@ -78,7 +84,7 @@ LinePiece.prototype.states = [ [ [1],
 
 function TPiece() {
     this.gridX = 4;
-    this.gridY = -2;
+    this.gridY = -1;
 }
 
 TPiece.prototype = new Piece();
@@ -101,7 +107,7 @@ TPiece.prototype.states = [ [ [1, 1, 1],
 
 function ZPiece() {
     this.gridX = 4;
-    this.gridY = -2;
+    this.gridY = -1;
 }
 
 ZPiece.prototype = new Piece();
@@ -117,7 +123,7 @@ ZPiece.prototype.states = [ [ [1, 1, 0],
 
 function ReverseZPiece() {
     this.gridX = 4;
-    this.gridY = -2;
+    this.gridY = -1;
 }
 
 ReverseZPiece.prototype = new Piece();

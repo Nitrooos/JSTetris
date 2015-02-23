@@ -16,7 +16,10 @@ window.addEventListener("load", function() {
             // Następujące skrypty są ładowane domyślnie
             load: [
                 "js/lib/sizzle.js",
+                "js/src/bulkImageLoader.js",
+                "js/src/draw.js",
                 "js/src/pieces.js",
+                "js/src/draw.js",
                 "js/src/board.js",
                 "js/src/pieces_manager.js",
                 "js/src/events.js"
@@ -26,6 +29,8 @@ window.addEventListener("load", function() {
                 console.log("Załadowano wszystkie pliki!");
                 tetris.board.initBoard(10, 15);
                 tetris.events.bindEvents();
+                tetris.draw.loadGraphics();
+                tetris.piecesManager.addNewPiece();
             }
         }
     ]);

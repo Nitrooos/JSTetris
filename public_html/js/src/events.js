@@ -12,16 +12,20 @@ tetris.events = (function () {
         window.addEventListener('keydown', onKeyEvent);
         window.addEventListener('keyup', onKeyEvent);
 
-        window.setInterval(function() { tetris.piecesManager.movePiece({ y: 1 }, true); }, 1000);
+        window.setInterval(function() {
+            tetris.piecesManager.movePiece({ x: 0, y: 1 }, true);
+            tetris.draw.drawBoard(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
+        }, 1000);
     }
 
     function onKeyEvent(e) {
         switch (e.keyCode) {
-            case keys.LEFT:     keyRepeat(function() { tetris.piecesManager.movePiece({ x: -1 }); });    break;
-            case keys.RIGHT:    keyRepeat(function() { tetris.piecesManager.movePiece({ x:  1 }); });    break;
+            case keys.LEFT:     keyRepeat(function() { tetris.piecesManager.movePiece({ x: -1, y: 0 }); });    break;
+            case keys.RIGHT:    keyRepeat(function() { tetris.piecesManager.movePiece({ x:  1, y: 0 }); });    break;
             case keys.UP:       keyRepeat(function() { tetris.piecesManager.rotatePiece();        });    break;
             case keys.DOWN:     keyRepeat(function() { tetris.piecesManager.pullPieceToBottom();  });    break;
         }
+        tetris.draw.drawBoard(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
 
         function keyRepeat(repeatFunction) {
             if (e.type === 'keyup') {
@@ -29,7 +33,7 @@ tetris.events = (function () {
                 keyInterval = undefined;
             } else if (e.type === 'keydown' && keyInterval === undefined) {
                 repeatFunction();
-                keyInterval = window.setInterval(repeatFunction, 1000);
+                keyInterval = window.setInterval(repeatFunction, 300);
             }
         }
 

@@ -16,7 +16,7 @@ tetris.piecesManager = (function() {
             case 6: piece = new ReverseZPiece();    break;
         }
 
-        piece.color = Math.floor(Math.random() * 8);
+        piece.color = Math.floor(Math.random() * 8) + 1;
         return piece;
     }
 
@@ -27,7 +27,7 @@ tetris.piecesManager = (function() {
     function pullPieceToBottom() {
         var move = tetris.board.pieceToBottom(activePiece);     // o ile pociągnąć klocek w dół?
         activePiece.gridY += move.y;                            // natychmiastowo na dole
-        tetris.board.commitMoveCallback();                      // zatwierdź zmianę położenia na tablicy
+        tetris.board.commitMoveCallback(activePiece);           // zatwierdź zmianę położenia na tablicy
         addNewPiece();                                          // nowy klocek na górze
     }
 
@@ -35,24 +35,28 @@ tetris.piecesManager = (function() {
         if (tetris.board.validMove(activePiece, move)) {
             activePiece.gridX += move.x;
             activePiece.gridY += move.y;
-            if (commit === true && tetris.board.commitMoveCallback(activePiece))
-                addNewPiece();
-        }
+        } else if (commit === true && tetris.board.commitMoveCallback(activePiece))
+            addNewPiece();
     }
 
     function rotatePiece() {
-        if (activePiece.curState == activePiece.states.length - 1) {
-            activePiece = 0;
+        if (activePiece.curState === activePiece.states.length - 1) {
+            activePiece.curState = 0;
         } else {
             ++activePiece.curState;
         }
+    }
+
+    function getActivePiece() {
+        return activePiece;
     }
 
     return {
         addNewPiece: addNewPiece,
         movePiece: movePiece,
         rotatePiece: rotatePiece,
-        pullPieceToBottom: pullPieceToBottom
+        pullPieceToBottom: pullPieceToBottom,
+        getActivePiece: getActivePiece
     };
 
 })();

@@ -2,7 +2,7 @@ tetris.board = (function () {
     var board = [],
         WIDTH,
         HEIGHT;
-    
+
     function initBoard(width, height) {
         WIDTH = width;
         HEIGHT = height;
@@ -13,24 +13,24 @@ tetris.board = (function () {
             }
         }
     }
-    
+
     function inBoard(x, y) {
         if (x >= 0 && x < WIDTH && y < HEIGHT)
             return true;
         return false;
     }
-    
+
     function overlap(x, y, state) {
         if (y < 0 || state === 0 || board[y][x] === 0)
             return false;
         return true;
     }
-    
+
     function validMove(piece, move, stateNum) {
         if (!(piece instanceof Piece) || move === undefined)
             return false;
         stateNum = stateNum || piece.curState;
-        
+
         var state = piece.states[stateNum];
         for (var i = 0; i < state.length; ++i)
             for (var j = 0; j < state[i].length; ++j) {
@@ -41,23 +41,25 @@ tetris.board = (function () {
             }
         return true;
     }
-    
+
     function endOfFall(activePiece) {
         if (validMove(activePiece, { x: 0, y: 1 }))
             return false;
         return true;
     }
-    
+
     // klocek już nie spada (uaktualnij board)
     function freezePiece(piece) {
         var state = piece.states[piece.curState];
         for (var i = 0, max_i = state.length; i < max_i; ++i) {
             for (var j = 0, max_j = state[i].length; j < max_j; ++j) {
-                board[piece.gridY + i][piece.gridX + j] = state[i][j];
+                var field = board[piece.gridY + i][piece.gridX + j];
+                if (field === 0)
+                    board[piece.gridY + i][piece.gridX + j] = state[i][j]*piece.color;
             }
         }
     }
-    
+
     // zwraca true jeśli należy utworzyć nowy klocek
     // (koniec spadania poprzedniego)
     function commitMoveCallback(activePiece) {
@@ -67,7 +69,7 @@ tetris.board = (function () {
         }
         return false;
     }
-    
+
     // zwraca ruch, który spowoduje "pociągnięcie" klocka na dół planszy
     function pieceToBottom(activePiece) {
         if (activePiece instanceof Piece) {
@@ -79,11 +81,11 @@ tetris.board = (function () {
         }
         return undefined;
     }
-    
+
     function getBoard() {
         return board;
     }
-    
+
     return {
         initBoard: initBoard,
         validMove: validMove,
@@ -91,5 +93,5 @@ tetris.board = (function () {
         pieceToBottom: pieceToBottom,
         getBoard: getBoard
     };
-    
+
 })();

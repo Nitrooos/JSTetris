@@ -6,7 +6,7 @@ function BulkImageLoader() {
     this.onReadyCallback = function() {
         throw new Error("BulkImageLoader.onReadyCallback was not set");
     };
-    
+
     this.onProgressCallback = function() {
         var result;
         if (this.images.length > 0)
@@ -26,14 +26,14 @@ function BulkImageLoader() {
     };
 
     this.addImage = function (src, name) {
-        var img 	= new Image();
-        img.loader	= this;
+        var img     = new Image();
+        img.loader  = this;
         this.images.push({ image: img, source: src, imgName: name });
     };
 
     this.loadImages = function() {
         for (var i = 0, len = this.images.length; i < len; i++) {
-            this.images[i].image.src = this.images[i].source;			
+            this.images[i].image.src = this.images[i].source;
             this.images[i].image.onload = this.onImageLoaded;
             this.images[i].image.name = this.images[i].imgName;
         }
