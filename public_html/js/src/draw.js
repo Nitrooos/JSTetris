@@ -49,7 +49,7 @@ tetris.draw = (function() {
 
     return {
         loadGraphics: loadGraphics,
-        drawBoard: drawBoard
+        board: drawBoard
     };
 
 })();

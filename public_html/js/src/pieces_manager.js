@@ -26,17 +26,21 @@ tetris.piecesManager = (function() {
 
     function pullPieceToBottom() {
         var move = tetris.board.pieceToBottom(activePiece);     // o ile pociągnąć klocek w dół?
-        activePiece.gridY += move.y;                            // natychmiastowo na dole
-        tetris.board.commitMoveCallback(activePiece);           // zatwierdź zmianę położenia na tablicy
-        addNewPiece();                                          // nowy klocek na górze
+        activePiece.gridY += move.y;
+        tetris.board.commitMoveCallback(activePiece);
+        addNewPiece();
     }
 
     function movePiece(move, commit) {
+        // sprawdź czy ruch jest ok
         if (tetris.board.validMove(activePiece, move)) {
+            // wszystko ok
             activePiece.gridX += move.x;
             activePiece.gridY += move.y;
-        } else if (commit === true && tetris.board.commitMoveCallback(activePiece))
+        // ruch nieprawidłowy, spróbuj scommitować
+        } else if (commit === true && tetris.board.commitMoveCallback(activePiece)) {
             addNewPiece();
+        }
     }
 
     function rotatePiece() {

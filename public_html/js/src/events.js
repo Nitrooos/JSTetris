@@ -14,7 +14,7 @@ tetris.events = (function () {
 
         window.setInterval(function() {
             tetris.piecesManager.movePiece({ x: 0, y: 1 }, true);
-            tetris.draw.drawBoard(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
+            tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
         }, 1000);
     }
 
@@ -25,7 +25,7 @@ tetris.events = (function () {
             case keys.UP:       keyRepeat(function() { tetris.piecesManager.rotatePiece();        });    break;
             case keys.DOWN:     keyRepeat(function() { tetris.piecesManager.pullPieceToBottom();  });    break;
         }
-        tetris.draw.drawBoard(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
+        tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
 
         function keyRepeat(repeatFunction) {
             if (e.type === 'keyup') {

@@ -64,8 +64,11 @@ tetris.board = (function () {
     // (koniec spadania poprzedniego)
     function commitMoveCallback(activePiece) {
         if (activePiece instanceof Piece && endOfFall(activePiece)) {
-            freezePiece(activePiece);
-            return true;
+            if (activePiece.gridY >= 0) {
+                freezePiece(activePiece);
+                return true;
+            } else
+                return false;
         }
         return false;
     }
