@@ -11,14 +11,16 @@ tetris.events = (function () {
     function bindEvents() {
         window.addEventListener('keydown', onKeyEvent);
         window.addEventListener('keyup', onKeyEvent);
+
+        window.setInterval(function() { tetris.piecesManager.movePiece({ y: 1 }, true); }, 1000);
     }
 
     function onKeyEvent(e) {
         switch (e.keyCode) {
             case keys.LEFT:     keyRepeat(function() { tetris.piecesManager.movePiece({ x: -1 }); });    break;
             case keys.RIGHT:    keyRepeat(function() { tetris.piecesManager.movePiece({ x:  1 }); });    break;
-            case keys.UP:       keyRepeat(function() { console.log('Wcisnięto strzałkę W GÓRĘ');  });    break;
-            case keys.DOWN:     keyRepeat(function() { console.log('Wcisnięto strzałkę W DÓŁ');   });    break;
+            case keys.UP:       keyRepeat(function() { tetris.piecesManager.rotatePiece();        });    break;
+            case keys.DOWN:     keyRepeat(function() { tetris.piecesManager.pullPieceToBottom();  });    break;
         }
 
         function keyRepeat(repeatFunction) {

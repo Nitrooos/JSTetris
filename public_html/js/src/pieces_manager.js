@@ -32,18 +32,26 @@ tetris.piecesManager = (function() {
     }
 
     function movePiece(move, commit) {
-        console.log('Przesunięto klocek');
-        /*if (tetris.board.validMove(activePiece, move)) {
+        if (tetris.board.validMove(activePiece, move)) {
             activePiece.gridX += move.x;
             activePiece.gridY += move.y;
             if (commit === true && tetris.board.commitMoveCallback(activePiece))
                 addNewPiece();
-        }*/
+        }
+    }
+
+    function rotatePiece() {
+        if (activePiece.curState == activePiece.states.length - 1) {
+            activePiece = 0;
+        } else {
+            ++activePiece.curState;
+        }
     }
 
     return {
         addNewPiece: addNewPiece,
         movePiece: movePiece,
+        rotatePiece: rotatePiece,
         pullPieceToBottom: pullPieceToBottom
     };
 
