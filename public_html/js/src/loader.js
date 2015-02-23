@@ -17,11 +17,15 @@ window.addEventListener("load", function() {
             load: [
                 "js/lib/sizzle.js",
                 "js/src/pieces.js",
-                "js/src/board.js"
+                "js/src/board.js",
+                "js/src/pieces_manager.js",
+                "js/src/events.js"
             ],
             // Funkcja wywoływana po załadowaniu wszystkich plików
             complete: function() {
                 console.log("Załadowano wszystkie pliki!");
+                tetris.board.initBoard(10, 15);
+                tetris.events.bindEvents();
             }
         }
     ]);

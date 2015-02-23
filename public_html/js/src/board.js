@@ -48,11 +48,23 @@ tetris.board = (function () {
         return true;
     }
     
+    // klocek już nie spada (uaktualnij board)
+    function freezePiece(piece) {
+        var state = piece.states[piece.curState];
+        for (var i = 0, max_i = state.length; i < max_i; ++i) {
+            for (var j = 0, max_j = state[i].length; j < max_j; ++j) {
+                board[piece.gridY + i][piece.gridX + j] = state[i][j];
+            }
+        }
+    }
+    
     // zwraca true jeśli należy utworzyć nowy klocek
     // (koniec spadania poprzedniego)
     function commitMoveCallback(activePiece) {
-        if (activePiece instanceof Piece && endOfFall(activePiece))
+        if (activePiece instanceof Piece && endOfFall(activePiece)) {
+            freezePiece(activePiece);
             return true;
+        }
         return false;
     }
     

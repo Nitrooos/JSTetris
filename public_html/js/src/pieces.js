@@ -76,7 +76,7 @@ LinePiece.prototype.states = [ [ [1],
                                ]
 ];
 
-function TPiece() {    
+function TPiece() {
     this.gridX = 4;
     this.gridY = -2;
 }
@@ -130,21 +130,3 @@ ReverseZPiece.prototype.states = [ [ [0, 1, 1],
                                      [0, 1]
                                    ]
 ];
-
-function getRandomPiece() {
-    var result = Math.floor(Math.random() * 7),
-        piece;
-
-    switch (result) {
-        case 0: piece = new LPiece();           break;
-        case 1: piece = new ReverseLPiece();    break;
-        case 2: piece = new BlockPiece();       break;
-        case 3: piece = new LinePiece();        break;
-        case 4: piece = new TPiece();           break;
-        case 5: piece = new ZPiece();           break;
-        case 6: piece = new ReverseZPiece();    break;
-    }
-    
-    piece.color = Math.floor(Math.random() * 8);
-    return piece;
-}
