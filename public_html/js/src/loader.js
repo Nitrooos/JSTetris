@@ -23,7 +23,8 @@ window.addEventListener("load", function() {
                 "js/src/board.js",
                 "js/src/pieces_manager.js",
                 "js/src/events.js",
-                "js/src/game.js"
+                "js/src/game.js",
+                "js/src/exceptions.js"
             ],
             // Funkcja wywoływana po załadowaniu wszystkich plików
             complete: function() {

@@ -22,14 +22,12 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=3
+current_page=4
 FILE_NAME_0=352;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Findex.html;0;4
-FILE_NAME_1=1060;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Floader.js;0;4
-FILE_NAME_2=2555;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fboard.js;0;4
-FILE_NAME_3=974;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fpieces_manager.js;0;4
-FILE_NAME_4=632;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fdraw.js;0;4
-FILE_NAME_5=224;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2FbulkImageLoader.js;0;4
-FILE_NAME_6=580;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fevents.js;0;4
-FILE_NAME_7=3745;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fpieces.js;0;4
-FILE_NAME_8=88;CSS;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fcss%2Fstyle.css;0;4
-FILE_NAME_9=1852;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FTwoIzoPrzykłady%2Fexamples%2Fchanged%2Fsrc%2Fmap.js;0;4
+FILE_NAME_1=693;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Floader.js;0;4
+FILE_NAME_2=2200;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fboard.js;0;4
+FILE_NAME_3=1273;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fpieces_manager.js;0;4
+FILE_NAME_4=148;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fgame.js;0;4
+FILE_NAME_5=1651;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fevents.js;0;4
+FILE_NAME_6=88;CSS;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fcss%2Fstyle.css;0;4
+FILE_NAME_7=1852;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FTwoIzoPrzykłady%2Fexamples%2Fchanged%2Fsrc%2Fmap.js;0;4

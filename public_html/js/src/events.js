@@ -8,14 +8,22 @@ tetris.events = (function () {
     },
         keyInterval;
 
-    function bindEvents() {
-        window.addEventListener('keydown', onKeyEvent);
-        window.addEventListener('keyup', onKeyEvent);
+    function bindEvents(callback) {
+        var
+            keyEventHandle = function (e) {
+                onKeyEvent(e);
+                callback();
+            },
+            refreshEventHandle = function () {
+                tetris.piecesManager.movePiece({ x: 0, y: 1 }, true);
+                callback();
+            };
 
-        window.setInterval(function() {
-            tetris.piecesManager.movePiece({ x: 0, y: 1 }, true);
-            tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
-        }, 1000);
+
+        window.addEventListener('keydown', keyEventHandle);
+        window.addEventListener('keyup', keyEventHandle);
+
+        window.setInterval(refreshEventHandle, 300);
     }
 
     function onKeyEvent(e) {
@@ -25,7 +33,6 @@ tetris.events = (function () {
             case keys.UP:       keyRepeat(function() { tetris.piecesManager.rotatePiece();        });    break;
             case keys.DOWN:     keyRepeat(function() { tetris.piecesManager.pullPieceToBottom();  });    break;
         }
-        tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
 
         function keyRepeat(repeatFunction) {
             if (e.type === 'keyup') {
@@ -36,11 +43,10 @@ tetris.events = (function () {
                 keyInterval = window.setInterval(repeatFunction, 300);
             }
         }
-
     }
 
     return {
-        bindEvents: bindEvents
+        bindEvents: bindEvents,
     };
 
 })();
