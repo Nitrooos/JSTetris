@@ -44,11 +44,12 @@ tetris.piecesManager = (function() {
     }
 
     function rotatePiece() {
-        if (activePiece.curState === activePiece.states.length - 1) {
-            activePiece.curState = 0;
-        } else {
-            ++activePiece.curState;
+        var nextPotentialState = 0;
+        if (activePiece.curState !== activePiece.states.length - 1) {
+            nextPotentialState = activePiece.curState + 1;
         }
+        if (tetris.board.validMove(activePiece, { x: 0, y: 0 }, nextPotentialState))
+            activePiece.curState = nextPotentialState;
     }
 
     function getActivePiece() {

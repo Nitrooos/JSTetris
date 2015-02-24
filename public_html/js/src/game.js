@@ -3,7 +3,7 @@ tetris.game = (function() {
     function init() {
         tetris.board.initBoard(10, 15);
         tetris.draw.loadGraphics();
-        tetris.events.bindEvents(onRender);
+        tetris.events.bindEvents(stateChange);
         tetris.piecesManager.addNewPiece();         // pierwszy klocek spadający z góry
     }
 
@@ -15,7 +15,9 @@ tetris.game = (function() {
         return false;
     }
 
-    function onRender() {
+    function stateChange() {
+        // tutaj miejsce na wykrywanie linii i aktualizację wyniku
+
         if (!isGameOver())
             tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
         else
@@ -23,8 +25,7 @@ tetris.game = (function() {
     }
 
     return {
-        init: init,
-        isGameOver: isGameOver
+        init: init
     };
 
 })();
