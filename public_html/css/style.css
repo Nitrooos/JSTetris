@@ -3,7 +3,7 @@ body {
 }
 
 #gameboard {
-    background-color:#8a8a8a;	
+    background-color:#8a8a8a;
     width:  320px;
     height: 480px;
     margin: 0 auto;
@@ -11,7 +11,7 @@ body {
 }
 
 #score {
-    font-size: 18pt;
+    font-size: 14pt;
     font-family: sans-serif, verdana;
     color: #fefefe;
     width: 320px;

@@ -3,7 +3,7 @@ var tetris = {
     settings: {
         rows: 15,
         cols: 10,
-        baseScore: 100,
+        baseScore: 50,
         numPieces: 7
     }
 };

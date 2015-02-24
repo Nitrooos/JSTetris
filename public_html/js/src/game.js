@@ -16,7 +16,12 @@ tetris.game = (function() {
     }
 
     function stateChange() {
-        // tutaj miejsce na wykrywanie linii i aktualizację wyniku
+        var fullLines = tetris.board.checkLines(),
+            counter = Sizzle('#lines')[0],
+            points = Sizzle('#points')[0];
+
+        counter.innerHTML = parseInt(counter.innerHTML) + fullLines;
+        points.innerHTML  = parseInt(points.innerHTML)  + Math.pow(fullLines, 2)*tetris.settings.baseScore;
 
         if (!isGameOver())
             tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());

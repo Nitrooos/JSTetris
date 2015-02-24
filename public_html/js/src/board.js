@@ -42,6 +42,39 @@ tetris.board = (function () {
         return true;
     }
 
+    function checkLines(activePiece) {
+        function removeLines(lines) {
+
+            lines.forEach(function(element, index, array) {
+                for (var i = 0, max_i = board[element].length; i < max_i; ++i) {
+                    board[element][i] = 0;
+                }
+            });
+
+            for (var i = lines[0] - 1; i >= 0; --i) {
+                for (var j = 0, max_j = board[i].length; j < max_j; ++j) {
+                    board[i + lines.length][j] = board[i][j];
+                }
+            }
+        }
+
+        var linesToRemove = [];
+        for (var i = 0, max_i = board.length; i < max_i; ++i) {
+            var isLineFull = true;
+            for (var j = 0, max_j = board[i].length; j < max_j; ++j) {
+                if (board[i][j] === 0) {
+                    isLineFull = false;
+                    break;
+                }
+            }
+            if (isLineFull)
+                linesToRemove.push(i);
+        }
+        removeLines(linesToRemove);
+
+        return linesToRemove.length;
+    }
+
     function endOfFall(activePiece) {
         if (validMove(activePiece, { x: 0, y: 1 }))
             return false;
@@ -94,6 +127,7 @@ tetris.board = (function () {
         validMove: validMove,
         commitMoveCallback: commitMoveCallback,
         pieceToBottom: pieceToBottom,
+        checkLines: checkLines,
         getBoard: getBoard
     };
 
