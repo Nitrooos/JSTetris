@@ -19,6 +19,7 @@ tetris.draw = (function() {
             console.log('Załadowano obrazki z folderu asset!');
         };
         graphicsLoader.loadImages();
+
     }
 
     function drawBoard(board, activePiece) {

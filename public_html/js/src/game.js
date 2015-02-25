@@ -3,8 +3,10 @@ tetris.game = (function() {
     function init() {
         tetris.board.initBoard(10, 15);
         tetris.draw.loadGraphics();
-        tetris.events.bindEvents(stateChange);
+        tetris.game.events.bindEvents(stateChange);
         tetris.piecesManager.addNewPiece();         // pierwszy klocek spadający z góry
+
+        renderGameboard();
     }
 
     function isGameOver() {
@@ -23,10 +25,16 @@ tetris.game = (function() {
         counter.innerHTML = parseInt(counter.innerHTML) + fullLines;
         points.innerHTML  = parseInt(points.innerHTML)  + Math.pow(fullLines, 2)*tetris.settings.baseScore;
 
-        if (!isGameOver())
-            tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
-        else
+        renderGameboard();
+
+        if (isGameOver()) {
             console.log('GameOver');
+            tetris.game.events.unbindEvents();
+        }
+    }
+
+    function renderGameboard() {
+        tetris.draw.board(tetris.board.getBoard(), tetris.piecesManager.getActivePiece());
     }
 
     return {

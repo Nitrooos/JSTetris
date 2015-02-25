@@ -1,4 +1,4 @@
-tetris.events = (function () {
+tetris.game.events = (function () {
 
     var keys = {
         LEFT : 37,
@@ -6,24 +6,30 @@ tetris.events = (function () {
         UP   : 38,
         DOWN : 40
     },
-        keyInterval;
+        intervals = { },
+        eventHandles = { };
 
     function bindEvents(callback) {
-        var
-            keyEventHandle = function (e) {
-                onKeyEvent(e);
-                callback();
-            },
-            refreshEventHandle = function () {
-                tetris.piecesManager.movePiece({ x: 0, y: 1 }, true);
-                callback();
-            };
+        eventHandles.key = function (e) {
+            onKeyEvent(e);
+            callback();
+        },
+        eventHandles.refresh = function () {
+            tetris.piecesManager.movePiece({ x: 0, y: 1 }, true);
+            callback();
+        };
 
+        window.addEventListener('keydown', eventHandles.key);
+        window.addEventListener('keyup', eventHandles.key);
 
-        window.addEventListener('keydown', keyEventHandle);
-        window.addEventListener('keyup', keyEventHandle);
+        intervals.refresh = window.setInterval(eventHandles.refresh, 300);
+    }
 
-        window.setInterval(refreshEventHandle, 300);
+    function unbindEvents() {
+        window.removeEventListener('keydown', eventHandles.key);
+        window.removeEventListener('keyup', eventHandles.key);
+
+        window.clearInterval(intervals.refresh);
     }
 
     function onKeyEvent(e) {
@@ -36,17 +42,18 @@ tetris.events = (function () {
 
         function keyRepeat(repeatFunction) {
             if (e.type === 'keyup') {
-                window.clearInterval(keyInterval);
-                keyInterval = undefined;
-            } else if (e.type === 'keydown' && keyInterval === undefined) {
+                window.clearInterval(intervals.key);
+                intervals.key = undefined;
+            } else if (e.type === 'keydown' && intervals.key === undefined) {
                 repeatFunction();
-                keyInterval = window.setInterval(repeatFunction, 300);
+                intervals.key = window.setInterval(repeatFunction, 300);
             }
         }
     }
 
     return {
         bindEvents: bindEvents,
+        unbindEvents: unbindEvents
     };
 
 })();
