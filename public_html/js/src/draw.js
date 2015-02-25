@@ -19,9 +19,8 @@ tetris.draw = (function() {
             console.log('Załadowano obrazki z folderu asset!');
         };
         graphicsLoader.loadImages();
-
     }
-
+    
     function drawBoard(board, activePiece) {
         context.drawImage(graphicsLoader.getImageAtIndex(images['bg']), 0, 0, canvas.width, canvas.height);
 

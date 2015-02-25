@@ -19,12 +19,11 @@ window.addEventListener("load", function() {
                 "js/src/bulkImageLoader.js",
                 "js/src/draw.js",
                 "js/src/pieces.js",
-                "js/src/draw.js",
                 "js/src/board.js",
                 "js/src/pieces_manager.js",
                 "js/src/game.js",
                 "js/src/events.js",
-                "js/src/exceptions.js"
+                "js/src/screen/splash.js"
             ],
             // Funkcja wywoływana po załadowaniu wszystkich plików
             complete: function() {
