@@ -7,6 +7,7 @@ body {
     -webkit-user-select: none;
 
     background-color: #000;         /* czarne tło */
+    overflow: hidden;
 }
 
 #gameboard {
@@ -15,18 +16,10 @@ body {
     height: 480px;
     margin: 0 auto;
     border: 2px solid #6e6e7b;
-    overflow: none;
+    font-size: 48pt;
 }
 
 #score {
-    font-size: 14pt;
-    font-family: sans-serif, verdana;
-    color: #fefefe;
-    width: 320px;
-    margin: 0 auto;
-}
-
-#directions p {
     font-size: 14pt;
     font-family: sans-serif, verdana;
     color: #fefefe;
@@ -51,19 +44,21 @@ body {
     /* Styling splash-screen */
 
 #splash-screen {
-    font-size: 0.5em;
+    font-size: 1em;
+    color: white;
     text-align: center;
     padding-top: 5em;
 }
 
 #splash-screen .continue {
-    font-size: 0.05em;
+    font-family: Geo;
+    font-size: 1.5em;
     cursor: pointer;
 }
 
 .logo {
     font-family: Slackey;
-    font-size: 2.4em;
+    font-size: 5em;
     line-height: 0.9em;
     margin: 0;
     text-align: center;
