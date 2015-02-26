@@ -3,7 +3,7 @@ var tetris = {
     settings: {
         rows: 15,
         cols: 10,
-        baseScore: 50,
+        baseScore: 30,
         numPieces: 7
     }
 };
@@ -24,12 +24,14 @@ window.addEventListener("load", function() {
                 "js/src/dom.js",
                 "js/src/game.js",
                 "js/src/events.js",
-                "js/src/screen/splash.js"
+                "js/src/screen/splash.js",
+                "js/src/screen/main-menu.js",
+                "js/src/screen/game-screen.js"
             ],
             // Funkcja wywoływana po załadowaniu wszystkich plików
             complete: function() {
                 console.log("Załadowano wszystkie pliki!");
-                tetris.game.init();
+                tetris.draw.loadGraphics();
                 tetris.game.showScreen('splash-screen');
             }
         }

@@ -1,8 +1,12 @@
 tetris.game = (function() {
 
+    var score = {
+        counterLines: 0,
+        points: 0
+    };
+
     function init() {
         tetris.board.initBoard(10, 15);
-        tetris.draw.loadGraphics();
         tetris.game.events.bindEvents(stateChange);
         tetris.piecesManager.addNewPiece();         // pierwszy klocek spadający z góry
 
@@ -38,14 +42,17 @@ tetris.game = (function() {
             counter = Sizzle('#lines')[0],
             points = Sizzle('#points')[0];
 
-        counter.innerHTML = parseInt(counter.innerHTML) + fullLines;
-        points.innerHTML  = parseInt(points.innerHTML)  + Math.pow(fullLines, 2)*tetris.settings.baseScore;
+        score.counterLines += fullLines;
+        score.points       += Math.pow(fullLines, 2)*tetris.settings.baseScore;
+        counter.innerHTML   = score.counterLines;
+        points.innerHTML    = score.points;
 
         renderGameboard();
 
         if (isGameOver()) {
-            console.log('GameOver');
             tetris.game.events.unbindEvents();
+            score.counterLines = score.points = 0;
+            tetris.game.showScreen('splash-screen');
         }
     }
 

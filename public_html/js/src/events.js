@@ -30,6 +30,7 @@ tetris.game.events = (function () {
         window.removeEventListener('keyup', eventHandles.key);
 
         window.clearInterval(intervals.refresh);
+        window.clearInterval(intervals.key);
     }
 
     function onKeyEvent(e) {
