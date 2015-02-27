@@ -23,7 +23,8 @@ window.addEventListener("load", function() {
                 "js/src/pieces_manager.js",
                 "js/src/dom.js",
                 "js/src/game.js",
-                "js/src/events.js",
+                "js/src/game/events.js",
+                "js/src/game/score.js",
                 "js/src/screen/splash.js",
                 "js/src/screen/main-menu.js",
                 "js/src/screen/game-screen.js"

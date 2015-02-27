@@ -1,10 +1,5 @@
 tetris.game = (function() {
 
-    var score = {
-        counterLines: 0,
-        points: 0
-    };
-
     function init() {
         tetris.board.initBoard(10, 15);
         tetris.game.events.bindEvents(stateChange);
@@ -38,20 +33,14 @@ tetris.game = (function() {
     }
 
     function stateChange() {
-        var fullLines = tetris.board.checkLines(),
-            counter = Sizzle('#lines')[0],
-            points = Sizzle('#points')[0];
-
-        score.counterLines += fullLines;
-        score.points       += Math.pow(fullLines, 2)*tetris.settings.baseScore;
-        counter.innerHTML   = score.counterLines;
-        points.innerHTML    = score.points;
+        var fullLines = tetris.board.checkLines();
 
         renderGameboard();
+        tetris.game.score.refreshScore(fullLines);
 
         if (isGameOver()) {
             tetris.game.events.unbindEvents();
-            score.counterLines = score.points = 0;
+            tetris.game.score.clearScore();
             tetris.game.showScreen('splash-screen');
         }
     }
