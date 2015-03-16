@@ -14,3 +14,9 @@ TO DO list
 1. add a new version of current asset with smaller images (16x16 or 24x24 pixels per block)
 2. change CSS to make app responsive (currently displaying isn't adapted to mobile devices)
 3. detect type of device the game is running on to load proper asset
+
+####**Used technologies:**
+   * JavaScript
+   * HTML5
+   * CSS
+   * Modernizr library

@@ -22,15 +22,16 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=3
-FILE_NAME_0=752;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Findex.html;0;4
+current_page=10
+FILE_NAME_0=770;HTML;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Findex.html;0;4
 FILE_NAME_1=1078;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Floader.js;0;4
 FILE_NAME_2=1493;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fboard.js;0;4
-FILE_NAME_3=1910;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fpieces_manager.js;0;4
+FILE_NAME_3=1877;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fpieces_manager.js;0;4
 FILE_NAME_4=140;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fdraw.js;0;4
 FILE_NAME_5=1380;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fgame.js;0;4
-FILE_NAME_6=501;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fgame%2Fscore.js;0;4
+FILE_NAME_6=95;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fgame%2Fscore.js;0;4
 FILE_NAME_7=713;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fdom.js;0;4
 FILE_NAME_8=47;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fscreen%2Fgame-screen.js;0;4
 FILE_NAME_9=163;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fjs%2Fsrc%2Fscreen%2Fmain-menu.js;0;4
-FILE_NAME_10=1346;CSS;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fcss%2Fstyle.css;0;4
+FILE_NAME_10=1705;CSS;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fcss%2Fstyle.css;0;4
+FILE_NAME_11=414;CSS;0;EUTF-8;0;1;0;%2Fhome%2Fbartosz%2FDocuments%2FProjekty%2FWebDev%2FJSTetris%2Fpublic_html%2Fcss%2Ffontfaces.css;0;4
